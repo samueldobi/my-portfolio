@@ -21,14 +21,71 @@ export default function HomePage() {
     };
   }, []);
 
-  const projects = [
-    { id: 1, title: 'E-Commerce Platform', category: 'web', tech: 'React, Node.js', image: '🛍️' },
-    { id: 2, title: 'Fitness Tracking App', category: 'mobile', tech: 'React Native, Firebase', image: '💪' },
-    { id: 3, title: 'Dashboard Analytics', category: 'web', tech: 'Next.js, PostgreSQL', image: '📊' },
-    { id: 4, title: 'Weather App', category: 'mobile', tech: 'Flutter, OpenWeather API', image: '🌤️' },
-    { id: 5, title: 'Task Manager', category: 'web', tech: 'Vue.js, Express', image: '✅' },
-    { id: 6, title: 'Chat Application', category: 'mobile', tech: 'React Native, Socket.io', image: '💬' },
-  ];
+const projects = [
+  {
+    id: 1,
+    title: 'Votera',
+    category: 'web',
+    tech: 'React, Node.js, WebSockets',
+    image: '🗳️',
+    link: 'https://your-link-here.com/votera',
+    description:
+      'A real-time voting platform that enables users to create polls, participate in live elections, and view instant results powered by WebSocket communication.',
+  },
+  {
+    id: 2,
+    title: 'Verse',
+    category: 'web',
+    tech: 'Next.js, WebSockets, PostgreSQL',
+    image: '🌍',
+    link: 'https://your-link-here.com/verse',
+    description:
+      'A language exchange chat platform that connects learners worldwide, allowing them to practice, teach, and improve languages through real-time conversations—similar to Duolingo, but community-driven.',
+  },
+  {
+    id: 3,
+    title: 'Datrisoft',
+    category: 'mobile',
+    tech: 'React Native',
+    image: '🏦',
+    link: 'https://your-link-here.com/datrisoft',
+    description:
+      'A secure mobile banking fintech application that provides users with digital wallets, account management, and seamless financial transactions.',
+  },
+  {
+    id: 4,
+    title: 'Remindr',
+    category: 'mobile',
+    tech: 'React Native',
+    image: '⏰',
+    link: 'https://your-link-here.com/remindr',
+    description:
+      'A smart reminder app that helps users schedule and manage important activities such as utility payments, subscriptions, and personal tasks.',
+  },
+  {
+    id: 5,
+    title: 'Educesol',
+    category: 'web',
+    tech: 'Next.js',
+    image: '🎓',
+    link: 'https://your-link-here.com/educesol',
+    description:
+      'A comprehensive school management platform that enables students, teachers, and administrators to manage academic records, attendance, results, and overall educational processes.',
+  },
+  {
+    id: 6,
+    title: 'FilmFave',
+    category: 'web',
+    tech: 'React, Node.js',
+    image: '🎬',
+    link: 'https://your-link-here.com/filmfave',
+    description:
+      'A movie recommendation platform that helps users discover new films based on preferences, ratings, and trending content.',
+  },
+];
+
+
+
 
   const experiences = [
     { role: 'Senior Developer', company: 'Tech Corp', period: '2022 - Present' },
@@ -41,7 +98,7 @@ export default function HomePage() {
     : projects.filter(p => p.category === activeFilter);
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#132440] text-white overflow-x-hidden">
       {/* CursorFollower */}
       <div 
         className="fixed w-96 h-96 rounded-full pointer-events-none z-0 transition-opacity duration-300"
@@ -57,13 +114,13 @@ export default function HomePage() {
         <div className=" mx-auto px-6 py-4 flex justify-between items-center">
           <div className="text-xl font-mono tracking-wider">
             <span className="text-white">SAMUEL</span>
-            <span className="text-zinc-500">.DEV</span>
+            <span className="text-[#FF6D1F]">.DEV</span>
           </div>
-          <div className="flex gap-6">
-            <a href="#about" className="text-zinc-400 hover:text-white transition-colors duration-300">About</a>
-            <a href="#work" className="text-zinc-400 hover:text-white transition-colors duration-300">Work</a>
-            <a href="#experience" className="text-zinc-400 hover:text-white transition-colors duration-300">Experience</a>
-            <a href="#contact" className="text-zinc-400 hover:text-white transition-colors duration-300">Contact</a>
+          <div className="flex gap-6 text-[#FF6D1F]">
+            <a href="#about" className=" hover:text-white transition-colors duration-300">About</a>
+            <a href="#work" className=" hover:text-white transition-colors duration-300">Work</a>
+            <a href="#experience" className=" hover:text-white transition-colors duration-300">Experience</a>
+            <a href="#contact" className=" hover:text-white transition-colors duration-300">Contact</a>
           </div>
         </div>
       </nav>
@@ -101,7 +158,7 @@ export default function HomePage() {
             Full-stack developer specializing in crafting scalable applications 
             and intuitive user interfaces that solve real problems.
           </p>
-          <div className="flex gap-6 ">
+          <div className="flex gap-6 justify-center ">
             <a href="#work" className="px-8 py-4 bg-white text-black font-medium hover:bg-zinc-200 transition-colors duration-300">
               View Projects
             </a>
@@ -120,9 +177,7 @@ export default function HomePage() {
               <h2 className="text-5xl font-bold mb-6">About Me</h2>
               <div className="w-20 h-1 bg-white mb-8"></div>
               <p className="text-zinc-400 text-lg leading-relaxed mb-6">
-                I'm a passionate developer with a keen eye for design and performance. 
-                My work bridges the gap between aesthetic appeal and functional excellence, 
-                creating digital products that users love.
+                 I bring ideas to reality through code. Whether it is mobile or web related projects.
               </p>
               <p className="text-zinc-400 text-lg leading-relaxed">
                 With expertise across the full stack, I bring ideas to life through 
@@ -131,16 +186,16 @@ export default function HomePage() {
             </div>
             <div className="space-y-6">
               <div className="border-l-2 border-zinc-800 pl-6 hover:border-white transition-colors duration-300">
-                <h3 className="text-2xl font-semibold mb-2">Technical Skills</h3>
-                <p className="text-zinc-400">React, Node.js, TypeScript, Python, PostgreSQL, MongoDB, AWS</p>
+                <h3 className="text-2xl font-semibold mb-2">FrontEnd Skills</h3>
+                <p className="text-zinc-400">React, Tailwind CSS, TypeScript, Nextjs </p>
               </div>
               <div className="border-l-2 border-zinc-800 pl-6 hover:border-white transition-colors duration-300">
-                <h3 className="text-2xl font-semibold mb-2">Design Tools</h3>
-                <p className="text-zinc-400">Figma, Adobe XD, Tailwind CSS, Framer Motion</p>
+                <h3 className="text-2xl font-semibold mb-2">Backend Skills</h3>
+                <p className="text-zinc-400">Nodejs, MYSQl, Postgresql, Expressjs, NestJS, MongoDB</p>
               </div>
               <div className="border-l-2 border-zinc-800 pl-6 hover:border-white transition-colors duration-300">
-                <h3 className="text-2xl font-semibold mb-2">Interests</h3>
-                <p className="text-zinc-400">Web3, AI/ML, System Design, Open Source</p>
+                <h3 className="text-2xl font-semibold mb-2">Mobile</h3>
+                <p className="text-zinc-400">React Native</p>
               </div>
             </div>
           </div>
@@ -148,9 +203,9 @@ export default function HomePage() {
       </section>
 
       {/* Projects Section */}
-      <section id="work" className="py-32 px-6 bg-zinc-950">
+      <section id="work" className="py-32 px-6 ">
         <div className=" mx-auto">
-          <h2 className="text-5xl font-bold mb-4">Selected Work</h2>
+          <h2 className="text-5xl font-bold mb-4">Projects </h2>
           <div className="w-20 h-1 bg-white mb-12"></div>
           
           {/* Filter Buttons */}
@@ -193,6 +248,7 @@ export default function HomePage() {
                     {project.title}
                   </h3>
                   <p className="text-zinc-500 text-sm mb-4">{project.tech}</p>
+                   <p className="text-zinc-400 text-sm mb-4">{project.description}</p>
                   <div className="flex items-center text-zinc-400 group-hover:text-white transition-colors">
                     <span className="text-sm mr-2">View Project</span>
                     <ExternalLink size={16} />
@@ -230,7 +286,7 @@ export default function HomePage() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-32 px-6 bg-zinc-950">
+      <section id="contact" className="py-32 px-6 ">
         <div className=" mx-auto text-center">
           <h2 className="text-5xl font-bold mb-6">Let's Connect</h2>
           <p className="text-zinc-400 text-xl mb-12 max-w-2xl mx-auto">
