@@ -12,7 +12,7 @@ export default function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
     const handleScroll = () => {
@@ -322,7 +322,7 @@ const projects = [
                     <span className="text-[#fff] text-sm md:text-base">{exp.period}</span>
                 </div>
                 <p className="text-[#fff] text-lg mb-3">{exp.company}</p>
-                <p className="text-[#fff] leading-relaxed">{exp.description}</p>
+                {/* <p className="text-[#fff] leading-relaxed">{exp.description}</p> */}
                 </div>
             ))}
 </div>
@@ -385,7 +385,7 @@ const projects = [
         </div>
       </footer>
 
-      <style jsx>{`
+      <style >{`
         @keyframes fadeIn {
           from {
             opacity: 0;
