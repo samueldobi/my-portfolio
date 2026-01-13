@@ -309,20 +309,23 @@ const projects = [
           
           <div className="space-y-8">
             {experiences.map((exp, index) => (
-              <div
+                <div
                 key={index}
-                className="border-l-2 border-zinc-800 pl-8 hover:border-white transition-all duration-300 group"
-              >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-                  <h3 className="text-2xl font-semibold group-hover:text-zinc-300 transition-colors">
+                className="relative border border-[#fff] p-8 hover:border-[#FF6D1F] hover:bg-zinc-900/30 transition-all duration-300 group hover:scale-[1.02]"
+                >
+                <div className="absolute -left-2.25 top-8 w-4 h-4 rounded-full bg-zinc-800 border-2 border-black group-hover:bg-white transition-all duration-300"></div>
+                
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
+                    <h3 className="text-2xl font-semibold group-hover:text-white transition-colors">
                     {exp.role}
-                  </h3>
-                  <span className="text-zinc-500">{exp.period}</span>
+                    </h3>
+                    <span className="text-[#fff] text-sm md:text-base">{exp.period}</span>
                 </div>
-                <p className="text-zinc-400 text-lg">{exp.company}</p>
-              </div>
+                <p className="text-[#fff] text-lg mb-3">{exp.company}</p>
+                <p className="text-[#fff] leading-relaxed">{exp.description}</p>
+                </div>
             ))}
-          </div>
+</div>
         </div>
       </section>
 
