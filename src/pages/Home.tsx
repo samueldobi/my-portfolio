@@ -1,10 +1,15 @@
 import  { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, ExternalLink, Code2, Smartphone, Laptop } from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink, Code2, Smartphone, Laptop, Menu, XIcon } from 'lucide-react';
+import Votera from '../assets/votera.png';
+import Filmfave from '../assets/verse.png';
+import Verse from '../assets/filmfave.png';
+import Edusol from '../assets/edusol.png';
 
 export default function HomePage() {
   const [activeFilter, setActiveFilter] = useState('all');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [scrollY, setScrollY] = useState(0);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -27,8 +32,8 @@ const projects = [
     title: 'Votera',
     category: 'web',
     tech: 'React, Node.js, WebSockets',
-    image: '🗳️',
-    link: 'https://your-link-here.com/votera',
+    image: Votera,
+    link: 'https://votera.vercel.app/',
     description:
       'A real-time voting platform that enables users to create polls, participate in live elections, and view instant results powered by WebSocket communication.',
   },
@@ -37,8 +42,8 @@ const projects = [
     title: 'Verse',
     category: 'web',
     tech: 'Next.js, WebSockets, PostgreSQL',
-    image: '🌍',
-    link: 'https://your-link-here.com/verse',
+    image: Verse,
+    link: 'https://verse-gold.vercel.app/',
     description:
       'A language exchange chat platform that connects learners worldwide, allowing them to practice, teach, and improve languages through real-time conversations—similar to Duolingo, but community-driven.',
   },
@@ -67,8 +72,8 @@ const projects = [
     title: 'Educesol',
     category: 'web',
     tech: 'Next.js',
-    image: '🎓',
-    link: 'https://your-link-here.com/educesol',
+    image: Edusol,
+    link: 'https://www.educesol.com/',
     description:
       'A comprehensive school management platform that enables students, teachers, and administrators to manage academic records, attendance, results, and overall educational processes.',
   },
@@ -77,8 +82,8 @@ const projects = [
     title: 'FilmFave',
     category: 'web',
     tech: 'React, Node.js',
-    image: '🎬',
-    link: 'https://your-link-here.com/filmfave',
+    image: Filmfave,
+    link: 'https://filmfave.vercel.app/',
     description:
       'A movie recommendation platform that helps users discover new films based on preferences, ratings, and trending content.',
   },
@@ -88,9 +93,9 @@ const projects = [
 
 
   const experiences = [
-    { role: 'Senior Developer', company: 'Tech Corp', period: '2022 - Present' },
-    { role: 'Full Stack Developer', company: 'StartUp Inc', period: '2020 - 2022' },
-    { role: 'Junior Developer', company: 'Code Agency', period: '2018 - 2020' },
+    { role: 'Software Developer', company: 'Metroblue Tech Ltd', period: '2025 - Present' },
+    { role: 'Junior Developer Intern', company: 'Metroblue Tech Ltd', period: '2023 - 2023' },
+    { role: 'Freelance Software Developer', company: 'Innova Digital', period: '2022 - 2026' },
   ];
 
   const filteredProjects = activeFilter === 'all' 
@@ -110,18 +115,45 @@ const projects = [
       />
 
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 backdrop-blur-sm border-b border-zinc-800/50">
+      <nav className="fixed top-0 w-full z-50 backdrop-blur-sm border-b border-zinc-700">
         <div className=" mx-auto px-6 py-4 flex justify-between items-center">
           <div className="text-xl font-mono tracking-wider">
             <span className="text-white">SAMUEL</span>
             <span className="text-[#FF6D1F]">.DEV</span>
           </div>
-          <div className="flex gap-6 text-[#FF6D1F]">
-            <a href="#about" className=" hover:text-white transition-colors duration-300">About</a>
-            <a href="#work" className=" hover:text-white transition-colors duration-300">Work</a>
-            <a href="#experience" className=" hover:text-white transition-colors duration-300">Experience</a>
-            <a href="#contact" className=" hover:text-white transition-colors duration-300">Contact</a>
+          <div className="hidden md:flex gap-6 text-[#FFF] ">
+            <a href="#about" className=" hover:text-[#FF6D1F]">About</a>
+            <a href="#work" className="hover:text-[#FF6D1F] ">Work</a>
+            <a href="#experience" className=" hover:text-[#FF6D1F]">Experience</a>
+            <a href="#contact" className="hover:text-[#FF6D1F] ">Contact</a>
           </div>
+           <button className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                    <Menu size={30} />
+            </button>
+            {mobileMenuOpen && (
+            <div
+                className="md:hidden absolute top-full left-0 w-full
+                        bg-black/60 backdrop-blur-xl
+                        border-t border-white/10
+                        shadow-2xl"
+            >
+                <div className="flex flex-col py-4">
+                {["About", "Work", "Experience", "Contact"].map((item) => (
+                    <a
+                    key={item}
+                    href={`#${item.toLowerCase()}`}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="px-6 py-4 text-[#FFF]
+                                hover:bg-[#FF6D1F] hover:text-white
+                                transition"
+                    >
+                    {item}
+                    </a>
+                ))}
+                </div>
+            </div>
+            )}
+
         </div>
       </nav>
 
@@ -240,8 +272,12 @@ const projects = [
                   animation: `fadeIn 0.5s ease-out ${index * 0.1}s both`,
                 }}
               >
-                <div className="aspect-square bg-zinc-900 flex items-center justify-center text-6xl group-hover:scale-110 transition-transform duration-500">
-                  {project.image}
+                <div className="aspect-square bg-[#132440] flex items-center justify-center text-6xl group-hover:scale-110 transition-transform duration-500">
+                  <img
+                        src={project.image}
+                        alt={project.title}
+                        className="object-cover w-full h-full"
+                    />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-2 group-hover:text-zinc-300 transition-colors">
@@ -249,9 +285,14 @@ const projects = [
                   </h3>
                   <p className="text-zinc-500 text-sm mb-4">{project.tech}</p>
                    <p className="text-zinc-400 text-sm mb-4">{project.description}</p>
-                  <div className="flex items-center text-zinc-400 group-hover:text-white transition-colors">
-                    <span className="text-sm mr-2">View Project</span>
-                    <ExternalLink size={16} />
+                  <div className="flex justify-center items-center gap-1 text-zinc-400 group-hover:text-white transition-colors">
+                    {/* <span className="text-sm mr-2">View Project</span> */}
+                       <a  href={project.link}
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           className="text-sm  flex items-center">View Project
+                        </a>
+                    <ExternalLink size={16} className="inline-block" />
                   </div>
                 </div>
               </div>
@@ -295,7 +336,7 @@ const projects = [
           
           <div className="flex justify-center gap-8 mb-12">
             <a 
-              href="https://github.com" 
+              href="https://github.com/samueldobi" 
               target="_blank" 
               rel="noopener noreferrer"
               className="p-4 border border-zinc-800 hover:border-white hover:bg-white hover:text-black transition-all duration-300"
@@ -303,7 +344,7 @@ const projects = [
               <Github size={24} />
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/ikechukwu-frank-dobi-b47563266/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="p-4 border border-zinc-800 hover:border-white hover:bg-white hover:text-black transition-all duration-300"
@@ -311,10 +352,16 @@ const projects = [
               <Linkedin size={24} />
             </a>
             <a 
-              href="mailto:hello@example.com"
+              href="mailto:frankdobisamuel@gmail.com"
               className="p-4 border border-zinc-800 hover:border-white hover:bg-white hover:text-black transition-all duration-300"
             >
               <Mail size={24} />
+            </a>
+            <a 
+              href="https://x.com/SamuelDean_dev"
+              className="p-4 border border-zinc-800 hover:border-white hover:bg-white hover:text-black transition-all duration-300"
+            >
+              <XIcon size={24} />
             </a>
           </div>
           
@@ -330,8 +377,8 @@ const projects = [
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-zinc-800">
         <div className=" mx-auto flex flex-col md:flex-row justify-between items-center text-zinc-500 text-sm">
-          <p>© 2024 Your Name. All rights reserved.</p>
-          <p>Designed & Built with passion</p>
+          <p>© 2024 Samuel Dean. All rights reserved.</p>
+          {/* <p>Designed & Built with passion</p> */}
         </div>
       </footer>
 
