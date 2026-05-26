@@ -1,9 +1,13 @@
 import  { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, ExternalLink, Code2, Smartphone, Laptop, Globe, Menu, XIcon } from 'lucide-react';
-import Votera from '../assets/votera.png';
-import Filmfave from '../assets/verse.png';
-import Verse from '../assets/filmfave.png';
+import Votera from '../assets/votera1.png';
+import Filmfave from '../assets/filmfave.png';
+import Verse from '../assets/verse.png';
 import Edusol from '../assets/edusol.png';
+import Fundflow from '../assets/fundflow.png';
+import Readersboon from '../assets/readersboon.png';
+import Mesuhuin from '../assets/mesuhuin.png';
+import Jaybzsig from '../assets/jaybaig.png';
 
 export default function HomePage() {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -48,26 +52,6 @@ const projects = [
       'A language exchange chat platform that connects learners worldwide, allowing them to practice, teach, and improve languages through real-time conversations—similar to Duolingo, but community-driven.',
   },
   {
-    id: 3,
-    title: 'Datrisoft',
-    category: 'mobile',
-    tech: 'React Native',
-    image: '🏦',
-    link: 'https://your-link-here.com/datrisoft',
-    description:
-      'A secure mobile banking fintech application that provides users with digital wallets, account management, and seamless financial transactions.',
-  },
-  {
-    id: 4,
-    title: 'Remindr',
-    category: 'mobile',
-    tech: 'React Native',
-    image: '⏰',
-    link: 'https://your-link-here.com/remindr',
-    description:
-      'A smart reminder app that helps users schedule and manage important activities such as utility payments, subscriptions, and personal tasks.',
-  },
-  {
     id: 5,
     title: 'Educesol',
     category: 'web',
@@ -92,10 +76,70 @@ const projects = [
     title: 'Fundflow',
     category: 'web',
     tech: 'Solidity, React, Web3.js, Smart Contracts',
-    image: 'https://placehold.co/600x600/132440/FF6D1F?text=Fundflow',
-    link: 'https://your-link-here.com/fundflow',
+    image: Fundflow,
+    link: 'https://fundflow-fe.vercel.app/',
     description:
       'A Web3 blockchain-based crowdfunding platform that enables decentralized fundraising through smart contracts, providing transparency and security for campaign creators and backers.',
+  },
+  {
+    id: 9,
+    title: 'Readersboon CMS',
+    category: 'cms',
+    tech: 'WordPress, PHP, Custom Theme',
+    image: Readersboon,
+    link: 'https://readersboonafrica.com/',
+    description:
+      'An African literary magazine CMS that showcases African authors, poets, and storytellers with a rich reading experience and content management system.',
+  },
+  {
+    id: 11,
+    title: 'Mesuhuin Foundation CMS',
+    category: 'cms',
+    tech: 'WordPress, PHP, Custom Theme',
+    image: Mesuhuin,
+    link: 'https://mesuhuinfoundation.org/',
+    description:
+      'A CMS platform for Mesuhuin Foundation, providing tools for content management, event organization, and community outreach initiatives.',
+  },
+  {
+    id: 12,
+    title: 'Jaybzsig CMS',
+    category: 'cms',
+    tech: 'WordPress, WooCommerce, PHP',
+    image: Jaybzsig,
+    link: 'https://jaybzsig.com/',
+    description:
+      'An African e-commerce platform built on WordPress with WooCommerce, featuring a CMS-powered storefront for African artisans and businesses to sell their products online.',
+  },
+  {
+    id: 10,
+    title: 'Theokike Foundation CMS',
+    category: 'cms',
+    tech: 'WordPress, PHP, Elementor',
+    image: 'https://placehold.co/600x600/132440/FF6D1F?text=Theokike',
+    link: 'https://theokikefoundation.com/',
+    description:
+      'A content management system for Theokike Foundation, enabling the organization to share their mission, manage donations, and engage with their community.',
+  },
+  {
+    id: 3,
+    title: 'Datrisoft',
+    category: 'mobile',
+    tech: 'React Native',
+    image: '🏦',
+    link: 'https://your-link-here.com/datrisoft',
+    description:
+      'A secure mobile banking fintech application that provides users with digital wallets, account management, and seamless financial transactions.',
+  },
+  {
+    id: 4,
+    title: 'Remindr',
+    category: 'mobile',
+    tech: 'React Native',
+    image: '⏰',
+    link: 'https://your-link-here.com/remindr',
+    description:
+      'A smart reminder app that helps users schedule and manage important activities such as utility payments, subscriptions, and personal tasks.',
   },
   {
     id: 8,
@@ -106,46 +150,6 @@ const projects = [
     link: 'https://your-link-here.com/verde-health',
     description:
       'A digital pharmacy mobile application that allows users to order prescriptions, consult with pharmacists, and manage their medications seamlessly from their smartphone.',
-  },
-  {
-    id: 9,
-    title: 'Readersboon CMS',
-    category: 'cms',
-    tech: 'WordPress, PHP, Custom Theme',
-    image: 'https://placehold.co/600x600/132440/FF6D1F?text=Readersboon',
-    link: 'https://your-link-here.com/readersboon',
-    description:
-      'An African literary magazine CMS that showcases African authors, poets, and storytellers with a rich reading experience and content management system.',
-  },
-  {
-    id: 10,
-    title: 'Theokike Foundation CMS',
-    category: 'cms',
-    tech: 'WordPress, PHP, Elementor',
-    image: 'https://placehold.co/600x600/132440/FF6D1F?text=Theokike',
-    link: 'https://your-link-here.com/theokike-foundation',
-    description:
-      'A content management system for Theokike Foundation, enabling the organization to share their mission, manage donations, and engage with their community.',
-  },
-  {
-    id: 11,
-    title: 'Mesuhuin Foundation CMS',
-    category: 'cms',
-    tech: 'WordPress, PHP, Custom Theme',
-    image: 'https://placehold.co/600x600/132440/FF6D1F?text=Mesuhuin',
-    link: 'https://your-link-here.com/mesuhuin-foundation',
-    description:
-      'A CMS platform for Mesuhuin Foundation, providing tools for content management, event organization, and community outreach initiatives.',
-  },
-  {
-    id: 12,
-    title: 'Jaybzsig CMS',
-    category: 'cms',
-    tech: 'WordPress, WooCommerce, PHP',
-    image: 'https://placehold.co/600x600/132440/FF6D1F?text=Jaybzsig',
-    link: 'https://your-link-here.com/jaybzsig',
-    description:
-      'An African e-commerce platform built on WordPress with WooCommerce, featuring a CMS-powered storefront for African artisans and businesses to sell their products online.',
   },
 ];
 
@@ -334,11 +338,11 @@ const projects = [
                 }}
               >
                 <div className="aspect-square bg-[#132440] flex items-center justify-center text-6xl group-hover:scale-110 transition-transform duration-500">
-                  <img
-                        src={project.image}
-                        alt={project.title}
-                        className="object-cover w-full h-full"
-                    />
+<img
+      src={project.image}
+      alt={project.title}
+      className={`w-full h-full ${['Educesol', 'Verse', 'Jaybzsig CMS', 'Mesuhuin Foundation CMS'].includes(project.title) ? 'object-contain' : 'object-cover object-top'}`}
+  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-2 group-hover:text-zinc-300 transition-colors">
