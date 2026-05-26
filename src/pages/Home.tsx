@@ -1,5 +1,5 @@
 import  { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, ExternalLink, Code2, Smartphone, Laptop, Menu, XIcon } from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink, Code2, Smartphone, Laptop, Globe, Menu, XIcon } from 'lucide-react';
 import Votera from '../assets/votera.png';
 import Filmfave from '../assets/verse.png';
 import Verse from '../assets/filmfave.png';
@@ -86,6 +86,66 @@ const projects = [
     link: 'https://filmfave.vercel.app/',
     description:
       'A movie recommendation platform that helps users discover new films based on preferences, ratings, and trending content.',
+  },
+  {
+    id: 7,
+    title: 'Fundflow',
+    category: 'web',
+    tech: 'Solidity, React, Web3.js, Smart Contracts',
+    image: 'https://placehold.co/600x600/132440/FF6D1F?text=Fundflow',
+    link: 'https://your-link-here.com/fundflow',
+    description:
+      'A Web3 blockchain-based crowdfunding platform that enables decentralized fundraising through smart contracts, providing transparency and security for campaign creators and backers.',
+  },
+  {
+    id: 8,
+    title: 'Verde Health',
+    category: 'mobile',
+    tech: 'React Native, Node.js, Pharmacy APIs',
+    image: 'https://placehold.co/600x600/132440/FF6D1F?text=Verde+Health',
+    link: 'https://your-link-here.com/verde-health',
+    description:
+      'A digital pharmacy mobile application that allows users to order prescriptions, consult with pharmacists, and manage their medications seamlessly from their smartphone.',
+  },
+  {
+    id: 9,
+    title: 'Readersboon CMS',
+    category: 'cms',
+    tech: 'WordPress, PHP, Custom Theme',
+    image: 'https://placehold.co/600x600/132440/FF6D1F?text=Readersboon',
+    link: 'https://your-link-here.com/readersboon',
+    description:
+      'An African literary magazine CMS that showcases African authors, poets, and storytellers with a rich reading experience and content management system.',
+  },
+  {
+    id: 10,
+    title: 'Theokike Foundation CMS',
+    category: 'cms',
+    tech: 'WordPress, PHP, Elementor',
+    image: 'https://placehold.co/600x600/132440/FF6D1F?text=Theokike',
+    link: 'https://your-link-here.com/theokike-foundation',
+    description:
+      'A content management system for Theokike Foundation, enabling the organization to share their mission, manage donations, and engage with their community.',
+  },
+  {
+    id: 11,
+    title: 'Mesuhuin Foundation CMS',
+    category: 'cms',
+    tech: 'WordPress, PHP, Custom Theme',
+    image: 'https://placehold.co/600x600/132440/FF6D1F?text=Mesuhuin',
+    link: 'https://your-link-here.com/mesuhuin-foundation',
+    description:
+      'A CMS platform for Mesuhuin Foundation, providing tools for content management, event organization, and community outreach initiatives.',
+  },
+  {
+    id: 12,
+    title: 'Jaybzsig CMS',
+    category: 'cms',
+    tech: 'WordPress, WooCommerce, PHP',
+    image: 'https://placehold.co/600x600/132440/FF6D1F?text=Jaybzsig',
+    link: 'https://your-link-here.com/jaybzsig',
+    description:
+      'An African e-commerce platform built on WordPress with WooCommerce, featuring a CMS-powered storefront for African artisans and businesses to sell their products online.',
   },
 ];
 
@@ -245,7 +305,8 @@ const projects = [
             {[
               { id: 'all', label: 'All Projects', icon: Code2 },
               { id: 'web', label: 'Web', icon: Laptop },
-              { id: 'mobile', label: 'Mobile', icon: Smartphone }
+              { id: 'mobile', label: 'Mobile', icon: Smartphone },
+              { id: 'cms', label: 'CMS', icon: Globe }
             ].map((filter) => (
               <button
                 key={filter.id}
