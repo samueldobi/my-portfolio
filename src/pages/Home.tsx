@@ -157,9 +157,10 @@ const projects = [
 
 
   const experiences = [
-    { role: 'Software Developer', company: 'Metroblue Tech Ltd', period: '2025 - Present' },
+    { role: 'Software Developer', company: 'Metroblue Tech Ltd', period: '2025 - 2026' },
     { role: 'Junior Developer Intern', company: 'Metroblue Tech Ltd', period: '2023 - 2023' },
     { role: 'Freelance Software Developer', company: 'Innova Digital', period: '2022 - 2026' },
+    { role: 'Software Engineer', company: 'Verde Health', period: '2026 - present' },
   ];
 
   const filteredProjects = activeFilter === 'all' 
