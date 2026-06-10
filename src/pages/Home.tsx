@@ -1,5 +1,7 @@
 import  { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, ExternalLink, Code2, Smartphone, Laptop, Globe, Menu, XIcon } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Votera from '../assets/votera1.png';
 import Filmfave from '../assets/filmfave.png';
 import Verse from '../assets/verse.png';
@@ -27,6 +29,35 @@ export default function HomePage() {
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    heroTl
+      .fromTo('.hero-title', { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, stagger: 0.2 })
+      .fromTo('.hero-desc', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, '-=0.3')
+      .fromTo('.hero-cta', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6 }, '-=0.3');
+
+    gsap.fromTo('.about-animate', { y: 40, opacity: 0 }, {
+      y: 0, opacity: 1, duration: 0.8, ease: 'power3.out',
+      scrollTrigger: { trigger: '.about-animate', start: 'top 80%' },
+    });
+
+    gsap.fromTo('.project-card', { y: 40, opacity: 0 }, {
+      y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.projects-grid', start: 'top 80%' },
+    });
+
+    gsap.fromTo('.experience-card', { y: 40, opacity: 0 }, {
+      y: 0, opacity: 1, duration: 0.5, stagger: 0.15, ease: 'power3.out',
+      scrollTrigger: { trigger: '.experience-cards', start: 'top 80%' },
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(t => t.kill());
     };
   }, []);
 
@@ -230,7 +261,7 @@ const projects = [
           }}
         />
         <div className="relative z-10 max-w-4xl">
-          <div className="overflow-hidden mb-4">
+          <div className="overflow-hidden mb-4 hero-title">
             <h1 
               className="text-7xl md:text-8xl font-bold tracking-tight"
               style={{
@@ -240,7 +271,7 @@ const projects = [
               Building Digital
             </h1>
           </div>
-          <div className="overflow-hidden mb-8">
+          <div className="overflow-hidden mb-8 hero-title">
             <h1 
               className="text-7xl md:text-8xl font-bold tracking-tight text-[#a09888]"
               style={{
@@ -250,11 +281,11 @@ const projects = [
               Experiences
             </h1>
           </div>
-          <p className="text-xl text-[#6b7280] max-w-2xl mb-12">
+          <p className="text-xl text-[#6b7280] max-w-2xl mb-12 hero-desc">
             Full-stack developer specializing in crafting scalable applications 
             and intuitive user interfaces that solve real problems.
           </p>
-          <div className="flex gap-6 justify-center ">
+          <div className="flex gap-6 justify-center hero-cta">
             <a href="#work" className="px-8 py-4 bg-[#2d2d2d] text-white font-medium hover:bg-[#4a4a4a] transition-colors duration-300">
               View Projects
             </a>
@@ -268,12 +299,12 @@ const projects = [
       {/* About Section */}
       <section id="about" className="py-32 px-6">
         <div className=" mx-auto">
-          <div className="grid md:grid-cols-2 gap-16">
+          <div className="grid md:grid-cols-2 gap-16 about-animate">
             <div>
               <h2 className="text-5xl font-bold mb-6">About Me</h2>
               <div className="w-20 h-1 bg-[#2d2d2d] mb-8"></div>
               <p className="text-[#6b7280] text-lg leading-relaxed">
-                I enjoy building things that people actually use. Whether it's a website, a mobile app, or a new product idea, I like taking something from a rough concept and turning it into a polished experience. Most of my time is spent working with JavaScript and TypeScript across web and mobile, but what keeps me interested is solving problems and learning along the way.
+                I enjoy building things that people actually use. Whether it's a website, a mobile app, or a new product idea, I like taking something from a rough concept and turning it into a polished experience. Most of my time is spent working across web and mobile applications, but what keeps me interested is solving problems and learning along the way.
               </p>
             </div>
             <div className="space-y-6">
@@ -324,14 +355,11 @@ const projects = [
           </div>
 
           {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 projects-grid">
+            {filteredProjects.map((project) => (
               <div
                 key={project.id}
-                className="group relative border border-[#e5e0d8] hover:border-[#2d2d2d] transition-all duration-500 overflow-hidden"
-                style={{
-                  animation: `fadeIn 0.5s ease-out ${index * 0.1}s both`,
-                }}
+                className="project-card group relative border border-[#e5e0d8] hover:border-[#2d2d2d] transition-all duration-500 overflow-hidden"
               >
                 <div className="aspect-square bg-[#ede4d8] flex items-center justify-center text-6xl group-hover:scale-110 transition-transform duration-500">
 <img
@@ -368,11 +396,11 @@ const projects = [
           <h2 className="text-5xl font-bold mb-4">Experience</h2>
           <div className="w-20 h-1 bg-[#2d2d2d] mb-16"></div>
           
-          <div className="space-y-8">
+          <div className="space-y-8 experience-cards">
             {experiences.map((exp, index) => (
                 <div
                 key={index}
-                className="relative border border-[#e5e0d8] p-8 hover:border-[#FF6D1F] hover:bg-[#f5f0e8] transition-all duration-300 group hover:scale-[1.02]"
+                className="experience-card relative border border-[#e5e0d8] p-8 hover:border-[#FF6D1F] hover:bg-[#f5f0e8] transition-all duration-300 group hover:scale-[1.02]"
                 >
                 <div className="absolute -left-2.25 top-8 w-4 h-4 rounded-full bg-[#d4cdc0] border-2 border-[#fbf7f0] group-hover:bg-[#FF6D1F] transition-all duration-300"></div>
                 
@@ -441,23 +469,11 @@ const projects = [
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-[#e5e0d8]">
         <div className=" mx-auto flex flex-col md:flex-row justify-between items-center text-[#8a8a8a] text-sm">
-          <p>© 2024 Samuel Dean. All rights reserved.</p>
+          <p>© 2024  frankdobisamuel@gmail.com</p>
           {/* <p>Designed & Built with passion</p> */}
         </div>
       </footer>
 
-      <style >{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </div>
   );
 }
