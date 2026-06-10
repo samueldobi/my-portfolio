@@ -116,7 +116,7 @@ const projects = [
     title: 'Theokike Foundation CMS',
     category: 'cms',
     tech: 'WordPress, PHP, Elementor',
-    image: 'https://placehold.co/600x600/132440/FF6D1F?text=Theokike',
+    image: 'https://placehold.co/600x600/fbf7f0/FF6D1F?text=Theokike',
     link: 'https://theokikefoundation.com/',
     description:
       'A content management system for Theokike Foundation, enabling the organization to share their mission, manage donations, and engage with their community.',
@@ -146,13 +146,12 @@ const projects = [
     title: 'Verde Health',
     category: 'mobile',
     tech: 'React Native, Node.js, Pharmacy APIs',
-    image: 'https://placehold.co/600x600/132440/FF6D1F?text=Verde+Health',
+    image: 'https://placehold.co/600x600/fbf7f0/FF6D1F?text=Verde+Health',
     link: 'https://your-link-here.com/verde-health',
     description:
       'A digital pharmacy mobile application that allows users to order prescriptions, consult with pharmacists, and manage their medications seamlessly from their smartphone.',
   },
 ];
-
 
 
 
@@ -168,25 +167,25 @@ const projects = [
     : projects.filter(p => p.category === activeFilter);
 
   return (
-    <div className="min-h-screen bg-[#132440] text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#fbf7f0] text-[#2d2d2d] overflow-x-hidden">
       {/* CursorFollower */}
       <div 
         className="fixed w-96 h-96 rounded-full pointer-events-none z-0 transition-opacity duration-300"
         style={{
           left: mousePosition.x - 192,
           top: mousePosition.y - 192,
-          background: 'radial-gradient(circle, rgba(100,100,100,0.03) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(0,0,0,0.03) 0%, transparent 70%)',
         }}
       />
 
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 backdrop-blur-sm border-b border-zinc-700">
+      <nav className="fixed top-0 w-full z-50 backdrop-blur-sm border-b border-[#e5e0d8]">
         <div className=" mx-auto px-6 py-4 flex justify-between items-center">
           <div className="text-xl font-mono tracking-wider">
-            <span className="text-white">SAMUEL</span>
+            <span className="text-[#2d2d2d]">SAMUEL</span>
             <span className="text-[#FF6D1F]">.DEV</span>
           </div>
-          <div className="hidden md:flex gap-6 text-[#FFF] ">
+          <div className="hidden md:flex gap-6 text-[#2d2d2d] ">
             <a href="#about" className=" hover:text-[#FF6D1F]">About</a>
             <a href="#work" className="hover:text-[#FF6D1F] ">Work</a>
             <a href="#experience" className=" hover:text-[#FF6D1F]">Experience</a>
@@ -198,8 +197,8 @@ const projects = [
             {mobileMenuOpen && (
             <div
                 className="md:hidden absolute top-full left-0 w-full
-                        bg-black/60 backdrop-blur-xl
-                        border-t border-white/10
+                        bg-white/95 backdrop-blur-xl
+                        border-t border-[#e5e0d8]
                         shadow-2xl"
             >
                 <div className="flex flex-col py-4">
@@ -208,7 +207,7 @@ const projects = [
                     key={item}
                     href={`#${item.toLowerCase()}`}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="px-6 py-4 text-[#FFF]
+                    className="px-6 py-4 text-[#2d2d2d]
                                 hover:bg-[#FF6D1F] hover:text-white
                                 transition"
                     >
@@ -227,7 +226,7 @@ const projects = [
         <div 
           className="absolute inset-0 opacity-10"
           style={{
-            backgroundImage: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255,255,255,0.15) 0%, transparent 50%)`,
+            backgroundImage: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(0,0,0,0.05) 0%, transparent 50%)`,
           }}
         />
         <div className="relative z-10 max-w-4xl">
@@ -243,7 +242,7 @@ const projects = [
           </div>
           <div className="overflow-hidden mb-8">
             <h1 
-              className="text-7xl md:text-8xl font-bold tracking-tight text-zinc-600"
+              className="text-7xl md:text-8xl font-bold tracking-tight text-[#a09888]"
               style={{
                 transform: `translateY(${scrollY * 0.3}px)`,
               }}
@@ -251,15 +250,15 @@ const projects = [
               Experiences
             </h1>
           </div>
-          <p className="text-xl text-zinc-400 max-w-2xl mb-12">
+          <p className="text-xl text-[#6b7280] max-w-2xl mb-12">
             Full-stack developer specializing in crafting scalable applications 
             and intuitive user interfaces that solve real problems.
           </p>
           <div className="flex gap-6 justify-center ">
-            <a href="#work" className="px-8 py-4 bg-white text-black font-medium hover:bg-zinc-200 transition-colors duration-300">
+            <a href="#work" className="px-8 py-4 bg-[#2d2d2d] text-white font-medium hover:bg-[#4a4a4a] transition-colors duration-300">
               View Projects
             </a>
-            <a href="#contact" className="px-8 py-4 border border-zinc-700 hover:border-white transition-colors duration-300">
+            <a href="#contact" className="px-8 py-4 border border-[#d4cdc0] hover:border-[#2d2d2d] transition-colors duration-300">
               Get in Touch
             </a>
           </div>
@@ -272,27 +271,23 @@ const projects = [
           <div className="grid md:grid-cols-2 gap-16">
             <div>
               <h2 className="text-5xl font-bold mb-6">About Me</h2>
-              <div className="w-20 h-1 bg-white mb-8"></div>
-              <p className="text-zinc-400 text-lg leading-relaxed mb-6">
-                 I bring ideas to reality through code. Whether it is mobile or web related projects.
-              </p>
-              <p className="text-zinc-400 text-lg leading-relaxed">
-                With expertise across the full stack, I bring ideas to life through 
-                clean code, thoughtful architecture, and pixel-perfect implementations.
+              <div className="w-20 h-1 bg-[#2d2d2d] mb-8"></div>
+              <p className="text-[#6b7280] text-lg leading-relaxed">
+                I enjoy building things that people actually use. Whether it's a website, a mobile app, or a new product idea, I like taking something from a rough concept and turning it into a polished experience. Most of my time is spent working with JavaScript and TypeScript across web and mobile, but what keeps me interested is solving problems and learning along the way.
               </p>
             </div>
             <div className="space-y-6">
-              <div className="border-l-2 border-zinc-800 pl-6 hover:border-white transition-colors duration-300">
+              <div className="border-l-2 border-[#e5e0d8] pl-6 hover:border-[#2d2d2d] transition-colors duration-300">
                 <h3 className="text-2xl font-semibold mb-2">FrontEnd Skills</h3>
-                <p className="text-zinc-400">React, Tailwind CSS, TypeScript, Nextjs </p>
+                <p className="text-[#6b7280]">React, Tailwind CSS, TypeScript, Nextjs </p>
               </div>
-              <div className="border-l-2 border-zinc-800 pl-6 hover:border-white transition-colors duration-300">
+              <div className="border-l-2 border-[#e5e0d8] pl-6 hover:border-[#2d2d2d] transition-colors duration-300">
                 <h3 className="text-2xl font-semibold mb-2">Backend Skills</h3>
-                <p className="text-zinc-400">Nodejs, MYSQl, Postgresql, Expressjs, NestJS, MongoDB</p>
+                <p className="text-[#6b7280]">Nodejs, MYSQl, Postgresql, Expressjs, NestJS, MongoDB</p>
               </div>
-              <div className="border-l-2 border-zinc-800 pl-6 hover:border-white transition-colors duration-300">
+              <div className="border-l-2 border-[#e5e0d8] pl-6 hover:border-[#2d2d2d] transition-colors duration-300">
                 <h3 className="text-2xl font-semibold mb-2">Mobile</h3>
-                <p className="text-zinc-400">React Native</p>
+                <p className="text-[#6b7280]">React Native</p>
               </div>
             </div>
           </div>
@@ -303,7 +298,7 @@ const projects = [
       <section id="work" className="py-32 px-6 ">
         <div className=" mx-auto">
           <h2 className="text-5xl font-bold mb-4">Projects </h2>
-          <div className="w-20 h-1 bg-white mb-12"></div>
+          <div className="w-20 h-1 bg-[#2d2d2d] mb-12"></div>
           
           {/* Filter Buttons */}
           <div className="flex gap-4 mb-16 flex-wrap">
@@ -318,8 +313,8 @@ const projects = [
                 onClick={() => setActiveFilter(filter.id)}
                 className={`px-6 py-3 border transition-all duration-300 flex items-center gap-2 ${
                   activeFilter === filter.id
-                    ? 'bg-white text-black border-white'
-                    : 'border-zinc-700 text-zinc-400 hover:border-white hover:text-white'
+                    ? 'bg-[#2d2d2d] text-white border-[#2d2d2d]'
+                    : 'border-[#d4cdc0] text-[#6b7280] hover:border-[#2d2d2d] hover:text-[#2d2d2d]'
                 }`}
               >
                 <filter.icon size={18} />
@@ -333,12 +328,12 @@ const projects = [
             {filteredProjects.map((project, index) => (
               <div
                 key={project.id}
-                className="group relative border border-zinc-800 hover:border-white transition-all duration-500 overflow-hidden"
+                className="group relative border border-[#e5e0d8] hover:border-[#2d2d2d] transition-all duration-500 overflow-hidden"
                 style={{
                   animation: `fadeIn 0.5s ease-out ${index * 0.1}s both`,
                 }}
               >
-                <div className="aspect-square bg-[#132440] flex items-center justify-center text-6xl group-hover:scale-110 transition-transform duration-500">
+                <div className="aspect-square bg-[#ede4d8] flex items-center justify-center text-6xl group-hover:scale-110 transition-transform duration-500">
 <img
       src={project.image}
       alt={project.title}
@@ -346,12 +341,12 @@ const projects = [
   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 group-hover:text-zinc-300 transition-colors">
+                  <h3 className="text-xl font-semibold mb-2 group-hover:text-[#FF6D1F] transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-zinc-500 text-sm mb-4">{project.tech}</p>
-                   <p className="text-zinc-400 text-sm mb-4">{project.description}</p>
-                  <div className="flex justify-center items-center gap-1 text-zinc-400 group-hover:text-white transition-colors">
+                  <p className="text-[#8a8a8a] text-sm mb-4">{project.tech}</p>
+                   <p className="text-[#6b7280] text-sm mb-4">{project.description}</p>
+                  <div className="flex justify-center items-center gap-1 text-[#6b7280] group-hover:text-[#2d2d2d] transition-colors">
                     {/* <span className="text-sm mr-2">View Project</span> */}
                        <a  href={project.link}
                            target="_blank" 
@@ -371,23 +366,23 @@ const projects = [
       <section id="experience" className="py-32 px-6">
         <div className=" mx-auto">
           <h2 className="text-5xl font-bold mb-4">Experience</h2>
-          <div className="w-20 h-1 bg-white mb-16"></div>
+          <div className="w-20 h-1 bg-[#2d2d2d] mb-16"></div>
           
           <div className="space-y-8">
             {experiences.map((exp, index) => (
                 <div
                 key={index}
-                className="relative border border-[#fff] p-8 hover:border-[#FF6D1F] hover:bg-zinc-900/30 transition-all duration-300 group hover:scale-[1.02]"
+                className="relative border border-[#e5e0d8] p-8 hover:border-[#FF6D1F] hover:bg-[#f5f0e8] transition-all duration-300 group hover:scale-[1.02]"
                 >
-                <div className="absolute -left-2.25 top-8 w-4 h-4 rounded-full bg-zinc-800 border-2 border-black group-hover:bg-white transition-all duration-300"></div>
+                <div className="absolute -left-2.25 top-8 w-4 h-4 rounded-full bg-[#d4cdc0] border-2 border-[#fbf7f0] group-hover:bg-[#FF6D1F] transition-all duration-300"></div>
                 
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
-                    <h3 className="text-2xl font-semibold group-hover:text-white transition-colors">
+                    <h3 className="text-2xl font-semibold group-hover:text-[#FF6D1F] transition-colors">
                     {exp.role}
                     </h3>
-                    <span className="text-[#fff] text-sm md:text-base">{exp.period}</span>
+                    <span className="text-[#2d2d2d] text-sm md:text-base">{exp.period}</span>
                 </div>
-                <p className="text-[#fff] text-lg mb-3">{exp.company}</p>
+                <p className="text-[#6b7280] text-lg mb-3">{exp.company}</p>
                 {/* <p className="text-[#fff] leading-relaxed">{exp.description}</p> */}
                 </div>
             ))}
@@ -399,7 +394,7 @@ const projects = [
       <section id="contact" className="py-32 px-6 ">
         <div className=" mx-auto text-center">
           <h2 className="text-5xl font-bold mb-6">Let's Connect</h2>
-          <p className="text-zinc-400 text-xl mb-12 max-w-2xl mx-auto">
+          <p className="text-[#6b7280] text-xl mb-12 max-w-2xl mx-auto">
             Always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
           </p>
           
@@ -408,7 +403,7 @@ const projects = [
               href="https://github.com/samueldobi" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="p-4 border border-zinc-800 hover:border-white hover:bg-white hover:text-black transition-all duration-300"
+              className="p-4 border border-[#e5e0d8] hover:border-[#2d2d2d] hover:bg-[#2d2d2d] hover:text-white transition-all duration-300"
             >
               <Github size={24} />
             </a>
@@ -416,19 +411,19 @@ const projects = [
               href="https://www.linkedin.com/in/ikechukwu-frank-dobi-b47563266/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="p-4 border border-zinc-800 hover:border-white hover:bg-white hover:text-black transition-all duration-300"
+              className="p-4 border border-[#e5e0d8] hover:border-[#2d2d2d] hover:bg-[#2d2d2d] hover:text-white transition-all duration-300"
             >
               <Linkedin size={24} />
             </a>
             <a 
               href="mailto:frankdobisamuel@gmail.com"
-              className="p-4 border border-zinc-800 hover:border-white hover:bg-white hover:text-black transition-all duration-300"
+              className="p-4 border border-[#e5e0d8] hover:border-[#2d2d2d] hover:bg-[#2d2d2d] hover:text-white transition-all duration-300"
             >
               <Mail size={24} />
             </a>
             <a 
               href="https://x.com/SamuelDean_dev"
-              className="p-4 border border-zinc-800 hover:border-white hover:bg-white hover:text-black transition-all duration-300"
+              className="p-4 border border-[#e5e0d8] hover:border-[#2d2d2d] hover:bg-[#2d2d2d] hover:text-white transition-all duration-300"
             >
               <XIcon size={24} />
             </a>
@@ -436,7 +431,7 @@ const projects = [
           
           <a 
             href="mailto:hello@example.com"
-            className="inline-block px-12 py-4 bg-white text-black text-lg font-medium hover:bg-zinc-200 transition-colors duration-300"
+            className="inline-block px-12 py-4 bg-[#2d2d2d] text-white text-lg font-medium hover:bg-[#4a4a4a] transition-colors duration-300"
           >
             Send Message
           </a>
@@ -444,8 +439,8 @@ const projects = [
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-6 border-t border-zinc-800">
-        <div className=" mx-auto flex flex-col md:flex-row justify-between items-center text-zinc-500 text-sm">
+      <footer className="py-8 px-6 border-t border-[#e5e0d8]">
+        <div className=" mx-auto flex flex-col md:flex-row justify-between items-center text-[#8a8a8a] text-sm">
           <p>© 2024 Samuel Dean. All rights reserved.</p>
           {/* <p>Designed & Built with passion</p> */}
         </div>
