@@ -10,6 +10,7 @@ import Fundflow from '../assets/fundflow.png';
 import Readersboon from '../assets/readersboon.png';
 import Mesuhuin from '../assets/mesuhuin.png';
 import Jaybzsig from '../assets/jaybaig.png';
+import Verde from '../assets/verde.png';
 
 export default function HomePage() {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -63,6 +64,46 @@ export default function HomePage() {
 
 const projects = [
   {
+    id: 8,
+    title: 'Verde Health',
+    category: 'mobile',
+    tech: 'React Native, Node.js, Pharmacy APIs',
+    image: Verde,
+    link: 'https://verdehealth.org/',
+    description:
+      'A digital pharmacy mobile application that allows users to order prescriptions, consult with pharmacists, and manage their medications seamlessly from their smartphone.',
+  },
+  {
+    id: 12,
+    title: 'Jaybzsig CMS',
+    category: 'cms',
+    tech: 'WordPress, WooCommerce, PHP',
+    image: Jaybzsig,
+    link: 'https://jaybzsig.com/',
+    description:
+      'An African e-commerce platform built on WordPress with WooCommerce, featuring a CMS-powered storefront for African artisans and businesses to sell their products online.',
+  },
+  {
+    id: 7,
+    title: 'Fundflow',
+    category: 'web',
+    tech: 'Solidity, React, Web3.js, Smart Contracts',
+    image: Fundflow,
+    link: 'https://fundflow-fe.vercel.app/',
+    description:
+      'A Web3 blockchain-based crowdfunding platform that enables decentralized fundraising through smart contracts, providing transparency and security for campaign creators and backers.',
+  },
+  {
+    id: 9,
+    title: 'Readersboon CMS',
+    category: 'cms',
+    tech: 'WordPress, PHP, Custom Theme',
+    image: Readersboon,
+    link: 'https://readersboonafrica.com/',
+    description:
+      'An African literary magazine CMS that showcases African authors, poets, and storytellers with a rich reading experience and content management system.',
+  },
+  {
     id: 1,
     title: 'Votera',
     category: 'web',
@@ -103,26 +144,6 @@ const projects = [
       'A movie recommendation platform that helps users discover new films based on preferences, ratings, and trending content.',
   },
   {
-    id: 7,
-    title: 'Fundflow',
-    category: 'web',
-    tech: 'Solidity, React, Web3.js, Smart Contracts',
-    image: Fundflow,
-    link: 'https://fundflow-fe.vercel.app/',
-    description:
-      'A Web3 blockchain-based crowdfunding platform that enables decentralized fundraising through smart contracts, providing transparency and security for campaign creators and backers.',
-  },
-  {
-    id: 9,
-    title: 'Readersboon CMS',
-    category: 'cms',
-    tech: 'WordPress, PHP, Custom Theme',
-    image: Readersboon,
-    link: 'https://readersboonafrica.com/',
-    description:
-      'An African literary magazine CMS that showcases African authors, poets, and storytellers with a rich reading experience and content management system.',
-  },
-  {
     id: 11,
     title: 'Mesuhuin Foundation CMS',
     category: 'cms',
@@ -132,56 +153,36 @@ const projects = [
     description:
       'A CMS platform for Mesuhuin Foundation, providing tools for content management, event organization, and community outreach initiatives.',
   },
-  {
-    id: 12,
-    title: 'Jaybzsig CMS',
-    category: 'cms',
-    tech: 'WordPress, WooCommerce, PHP',
-    image: Jaybzsig,
-    link: 'https://jaybzsig.com/',
-    description:
-      'An African e-commerce platform built on WordPress with WooCommerce, featuring a CMS-powered storefront for African artisans and businesses to sell their products online.',
-  },
-  {
-    id: 10,
-    title: 'Theokike Foundation CMS',
-    category: 'cms',
-    tech: 'WordPress, PHP, Elementor',
-    image: 'https://placehold.co/600x600/fbf7f0/FF6D1F?text=Theokike',
-    link: 'https://theokikefoundation.com/',
-    description:
-      'A content management system for Theokike Foundation, enabling the organization to share their mission, manage donations, and engage with their community.',
-  },
-  {
-    id: 3,
-    title: 'Datrisoft',
-    category: 'mobile',
-    tech: 'React Native',
-    image: '🏦',
-    link: 'https://your-link-here.com/datrisoft',
-    description:
-      'A secure mobile banking fintech application that provides users with digital wallets, account management, and seamless financial transactions.',
-  },
-  {
-    id: 4,
-    title: 'Remindr',
-    category: 'mobile',
-    tech: 'React Native',
-    image: '⏰',
-    link: 'https://your-link-here.com/remindr',
-    description:
-      'A smart reminder app that helps users schedule and manage important activities such as utility payments, subscriptions, and personal tasks.',
-  },
-  {
-    id: 8,
-    title: 'Verde Health',
-    category: 'mobile',
-    tech: 'React Native, Node.js, Pharmacy APIs',
-    image: 'https://placehold.co/600x600/fbf7f0/FF6D1F?text=Verde+Health',
-    link: 'https://your-link-here.com/verde-health',
-    description:
-      'A digital pharmacy mobile application that allows users to order prescriptions, consult with pharmacists, and manage their medications seamlessly from their smartphone.',
-  },
+  // {
+  //   id: 10,
+  //   title: 'Theokike Foundation CMS',
+  //   category: 'cms',
+  //   tech: 'WordPress, PHP, Elementor',
+  //   image: 'https://placehold.co/600x600/fbf7f0/FF6D1F?text=Theokike',
+  //   link: 'https://theokikefoundation.com/',
+  //   description:
+  //     'A content management system for Theokike Foundation, enabling the organization to share their mission, manage donations, and engage with their community.',
+  // },
+  // {
+  //   id: 3,
+  //   title: 'Datrisoft',
+  //   category: 'mobile',
+  //   tech: 'React Native',
+  //   image: '🏦',
+  //   link: 'https://your-link-here.com/datrisoft',
+  //   description:
+  //     'A secure mobile banking fintech application that provides users with digital wallets, account management, and seamless financial transactions.',
+  // },
+  // {
+  //   id: 4,
+  //   title: 'Remindr',
+  //   category: 'mobile',
+  //   tech: 'React Native',
+  //   image: '⏰',
+  //   link: 'https://your-link-here.com/remindr',
+  //   description:
+  //     'A smart reminder app that helps users schedule and manage important activities such as utility payments, subscriptions, and personal tasks.',
+  // },
 ];
 
 
@@ -366,7 +367,7 @@ const projects = [
 <img
       src={project.image}
       alt={project.title}
-      className={`w-full h-full ${['Educesol', 'Verse', 'Jaybzsig CMS', 'Mesuhuin Foundation CMS'].includes(project.title) ? 'object-contain' : 'object-cover object-top'}`}
+      className={`w-full h-full ${['Educesol', 'Verse', 'Jaybzsig CMS', 'Mesuhuin Foundation CMS', 'Verde Health'].includes(project.title) ? 'object-cover object-center' : 'object-cover object-top'}`}
   />
                 </div>
                 <div className="p-6">
