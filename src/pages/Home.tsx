@@ -287,16 +287,20 @@ const projects = [
             </div>
             <div className="space-y-0 skill-list">
               <div className="skill-row">
-                <h3>FrontEnd Skills</h3>
-                <p>React, Tailwind CSS, TypeScript, Nextjs </p>
+                <h3>Frontend Engineering</h3>
+                <p>React, Next.js, React Native, Tailwind CSS, JavaScript, TypeScript</p>
               </div>
               <div className="skill-row">
-                <h3>Backend Skills</h3>
-                <p>Nodejs, MYSQl, Postgresql, Expressjs, NestJS, MongoDB</p>
+                <h3>Backend Engineering</h3>
+                <p>Node.js, PHP, Laravel, RESTful APIs, WebSockets</p>
               </div>
               <div className="skill-row">
-                <h3>Mobile</h3>
-                <p>React Native</p>
+                <h3>Databases &amp; Data Management</h3>
+                <p>PostgreSQL, MySQL, MongoDB</p>
+              </div>
+              <div className="skill-row">
+                <h3>DevOps &amp; Observability</h3>
+                <p>Git, GitHub Actions, Docker, CI/CD, Monitoring</p>
               </div>
             </div>
           </div>
