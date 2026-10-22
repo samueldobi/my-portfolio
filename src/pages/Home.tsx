@@ -449,7 +449,7 @@ const projects = [
       {/* Footer */}
       <footer className="site-footer py-8 px-6 md:px-[4.5rem]">
         <div className="flex flex-col md:flex-row justify-between items-center text-sm">
-          <p>© 2024  frankdobisamuel@gmail.com</p>
+          <p>2024 Frank-Dobi Samuel</p>
           {/* <p>Designed & Built with passion</p> */}
         </div>
       </footer>
